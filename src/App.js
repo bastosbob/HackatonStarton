@@ -12,7 +12,8 @@ import '@fontsource/roboto/900.css';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Home from "./Home";
 import Form from "./form";
-
+import Collection from "./collection";
+import Check from "./check";
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
           <Routes>
               <Route exact path="/" element={<Home/>}/>
               <Route path="/form" element={<Form/>}/>
+              <Route path="/collection" element={<Collection/>}/>
+              <Route path="/check" element={<Check/>}/>
           </Routes>
       </BrowserRouter>
   );

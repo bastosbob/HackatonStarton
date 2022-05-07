@@ -9,7 +9,7 @@ import '@fontsource/roboto/700.css';
 import '@fontsource/roboto/900.css';
 import { useNavigate} from "react-router-dom";
 
-function Home() {
+function Check() {
     const navigate = useNavigate();
     return (
 
@@ -25,10 +25,10 @@ function Home() {
                         </IconButton>
                     </Toolbar>
                 </AppBar>
-                <Button variant="contained" color="primary" onClick={()=>navigate("/check")}>Show Spectacles</Button>
+                <Button variant="contained" color="primary" onClick={()=>navigate("/form")}>Create a spectacle</Button>
             </header>
         </div>
     );
 }
 
-export default Home;
+export default Check;

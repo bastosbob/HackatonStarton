@@ -25,6 +25,7 @@ function Form() {
     <div>
       <AppBar position="static">
         <Toolbar>
+          <Button onClick={() => navigate('/')}>Home</Button>
           <Typography variant="h6" color="inherit">
             Form
           </Typography>
