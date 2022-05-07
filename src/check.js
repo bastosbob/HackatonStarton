@@ -23,9 +23,10 @@ function Check() {
                     <Toolbar variant="dense">
                         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         </IconButton>
+                        <Button variant="contained" color="primary" onClick={()=>navigate("/form")}>Create a spectacle</Button>
                     </Toolbar>
                 </AppBar>
-                <Button variant="contained" color="primary" onClick={()=>navigate("/form")}>Create a spectacle</Button>
+
             </header>
         </div>
     );
