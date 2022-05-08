@@ -36,9 +36,12 @@ function MintAll(name) {
 function addAddress(name) {
     let address = prompt("Enter the address to add");
 
- backend.post('http://localhost:9090/write_item/' + name, {
-     address: address
+ backend.post('http://localhost:9090/write_item/' + name,
+    {
+ "item" : {
+    "address" : address
  }
+}
  ).then(function (response) {
      console.log(response);
 
@@ -97,7 +100,7 @@ function addAddress(name) {
                                                                 <h5 className="card-title">{collection.name}</h5>
                                                                 <p className="card-text">{collection.description}</p>
                                                                 <Button variant="contained" color="primary" onClick={() => MintAll(collection.name)} >Send to all adresses</Button>
-                                                                <Button variant="contained" color="primary" onClick={() => addAddress(collection.name)}>Create a ticket</Button>
+                                                                <Button variant="contained" color="primary" onClick={() => addAddress(collection.name)}>Add an adress</Button>
                                                             </div>
                                                         </div>
                                                     </div>
