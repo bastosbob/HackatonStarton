@@ -19,6 +19,35 @@ const backend = axios.create({
     }
 );
 
+
+function MintAll(name) {
+    //axios
+    backend.post('http://localhost:9090/mint_all/' + name, {
+    }
+    ).then(function (response) {
+        console.log(response);
+    }
+    ).catch(function (error) {
+        console.log(error);
+    }
+    );
+}
+
+function addAddress(name) {
+    let address = prompt("Enter the address to add");
+
+ backend.post('http://localhost:9090/write_item/' + name, {
+     address: address
+ }
+ ).then(function (response) {
+     console.log(response);
+
+ }  ).catch(function (error) {
+     console.log(error);
+ }
+ );
+}
+
  function Check() {
 
      const [data, setData] = React.useState([]);
@@ -67,8 +96,8 @@ const backend = axios.create({
                                                             <div className="card-body">
                                                                 <h5 className="card-title">{collection.name}</h5>
                                                                 <p className="card-text">{collection.description}</p>
-                                                                <Button variant="contained" color="primary" >Send to all adresses</Button>
-                                                                <Button variant="contained" color="primary" >Create a ticket</Button>
+                                                                <Button variant="contained" color="primary" onClick={() => MintAll(collection.name)} >Send to all adresses</Button>
+                                                                <Button variant="contained" color="primary" onClick={() => addAddress(collection.name)}>Create a ticket</Button>
                                                             </div>
                                                         </div>
                                                     </div>

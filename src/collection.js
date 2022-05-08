@@ -45,7 +45,7 @@ async function safeMint(sid) {
 
 async function uploadMetadataOnIpfs(imgCid, name, description) {
     const metadataJson = {
-        "name": "Ticket for" + name,
+        "name": "Ticket for " + name,
         "description": description,
        "image": `ipfs://ipfs/${imgCid}`,
 
