@@ -119,8 +119,8 @@ function Collection() {
     //create a dropdown with the collections
 
     async function handle(name,description) {
-        let cid = await  uploadContractMetaDataOnIpfs('Qme3avLCQSNXsNno6ZMRT5pneYXdTshP1znGGFNKJdddSZ', name, '')
-        let meta = await uploadMetadataOnIpfs('Qme3avLCQSNXsNno6ZMRT5pneYXdTshP1znGGFNKJdddSZ', name, '')
+        let cid = await  uploadContractMetaDataOnIpfs('QmUGyjmati1meqTUL6BozMUV7W6yC8MDSGD4yKwLqHsnrn', name, '')
+        let meta = await uploadMetadataOnIpfs('QmUGyjmati1meqTUL6BozMUV7W6yC8MDSGD4yKwLqHsnrn', name, '')
         let contract = await createNftCollection(name, cid);
         console.log(meta)
         console.log("contract address: " + contract)
