@@ -34,13 +34,16 @@ async function mint(contractCid, to, cid) {
         {
             "functionName": 'safeMint',
             "signerWallet": '0xd82Af86bDAB2a0a1f98CF3bAf4427A97be16B047',
-            "speed": "low",
+            "speed": "custom",
+            "customGas": {
+                "gasPrice": "100000000000",
+            },
             "params": [
                 to,
                 cid
             ],
 
-        }).then(response => { console.log(response.data) })
+        }).then(response => { console.log(response.data) }).catch(error => { console.log(error) });
 }
 
 app.post('/create', (req, res) => {
@@ -109,7 +112,7 @@ app.post('/mint_all/:name', (req, res) => {
     let json = JSON.parse(fs.readFileSync(`collections/${name}.json`, "utf8"));
     let contractCid = json.cid;
     json.items.forEach(item => {
-        mint(contractCid, item.address, json.cid);
+        mint(contractCid, item.address, json.meta);
     }
     );
     res.send(json);

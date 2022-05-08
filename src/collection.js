@@ -45,12 +45,10 @@ async function safeMint(sid) {
 
 async function uploadMetadataOnIpfs(imgCid, name, description) {
     const metadataJson = {
-        "name": name + "_metadata",
+        "name": "Ticket for" + name,
         "description": description,
        "image": `ipfs://ipfs/${imgCid}`,
-        "external_link": "",
-        "seller_fee_basis_points": 100,
-        "fee_recipient": "0x3DD31b03b9e26e003ca24e892914c5c0de9D98BD"
+
     };
 
     const ipfsMetadata = await starton.post("/pinning/content/json",
@@ -67,6 +65,9 @@ async function uploadContractMetaDataOnIpfs(imgCid, name, description) {
         "name": name,
         "description":  description,
         "image": "ipfs://ipfs/" + imgCid,
+        "external_link": "",
+        "seller_fee_basis_points": 100,
+        "fee_recipient": "0x3DD31b03b9e26e003ca24e892914c5c0de9D98BD"
     }
 
     const ipfsMetadata = await starton.post("/pinning/content/json",
@@ -122,6 +123,7 @@ function Collection() {
         let meta = await uploadMetadataOnIpfs('QmRE5Qmn2Vy3xy9GSG54k3qS8Q3oNUi5seGVecdBQJUZDr', name, '')
         let contract = await createNftCollection(name, cid);
         console.log(meta)
+        console.log("contract address: " + contract)
         await createCollectionFile(name, '', contract, meta);
     }
     const handleSubmit = (event) => {
