@@ -1,0 +1,12 @@
+#collection {
+  width: 100%;
+  margin: 0 auto;
+  height: 30%;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+

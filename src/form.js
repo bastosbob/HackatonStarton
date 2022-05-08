@@ -6,7 +6,7 @@ import { useState } from 'react';
 import './form.css';
 
 function Form() {
-  
+
   const navigate = useNavigate();
 
 
@@ -37,52 +37,18 @@ function Form() {
         </Toolbar>
       </AppBar>
 
-      
+
       <form onSubmit={handleSubmit} id="form_react">
         <div>
             <TextField id="outlined-basic" label="Name of the event" variant="outlined" />
-        </div>
-        <div>
-          <Button type="submit">Submit</Button>
-        </div>
-      </form>
 
-
-      <form onSubmit={handleSubmit} id="form_react">
-        <div>
             <TextField id="outlined-basic" label="Show date" variant="outlined" />
-        </div>
-        <div>
-          <Button type="submit">Submit</Button>
-        </div>
-      </form>
 
-
-      <form onSubmit={handleSubmit} id="form_react">
-        <div>
             <TextField id="outlined-basic" label="Price" variant="outlined" />
-        </div>
-        <div>
-          <Button type="submit">Submit</Button>
-        </div>
-      </form>
 
-
-      <form onSubmit={handleSubmit} id="form_react">
-        <div>
             <TextField id="outlined-basic" label="Single ticket number" variant="outlined" />
-        </div>
-        <div>
-          <Button type="submit">Submit</Button>
-        </div>
-      </form>
 
-
-            <form onSubmit={handleSubmit} id="form_react">
-        <div>
             <TextField id="outlined-basic" label="Date of sale" variant="outlined" />
-        </div>
-        <div>
           <Button type="submit">Submit</Button>
         </div>
       </form>
